@@ -12,11 +12,13 @@ function addBookToLibrary(title, author, pages, read){
 }
 
 function display(){
+    completedBooks.innerHTML='';
+    readingList.innerHTML='';
     for (let item of library){
         let book = document.createElement('div');
         book.classList.add('card');
         book.innerHTML=
-            '<img src="https://picsum.photos/300" class="card-img-top" alt="...">' +
+            `<img src="https://picsum.photos/id/${parseInt(Math.random()*1000)}/300" class="card-img-top" alt="...">` +
             '<div class="card-body">' +
                 `<h5 class="card-title">${item.title}</h5>` +
                 `<p class="card-text">${item.author}</p>` +
@@ -37,11 +39,14 @@ function display(){
 
 let readingList = document.querySelector('.readingList');
 let completedBooks = document.querySelector('.completedBooks');
-let formSubmit = document.querySelector('#addNew button[type="Submit"]');
-// formSubmit.addEventListener('submit', function(event){
-//     event.preventDefault();
-//     console.log(event);
-// });
+let form = document.querySelector('#addNew form');
+form.addEventListener('submit', function(event){
+    console.log(event);
+    addBookToLibrary(event.target[0].value,event.target[1].value,event.target[2].value,event.target[3].value)
+    display();
+    form.reset();
+    event.preventDefault();
+});
 
 addBookToLibrary('Ramble Book', 'Adam Buxton', '398', false);
 addBookToLibrary('The Watchmaker of Filigree Street', 'Natasha Pulley', '587', true);
