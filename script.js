@@ -1,6 +1,6 @@
 // setup object to store books and method to add them
 
-let library= [];
+let library= JSON.parse(localStorage.getItem('myLibrary')) || [];
 
 function createBook(title, author, pages, read){
     this.title = title;
@@ -65,26 +65,17 @@ function display(){
                 library.splice(library.indexOf(item), 1);
                 display();
             }
-        })
+        });
+        localStorage.setItem('myLibrary', JSON.stringify(library));
     }
 }
 
 //add some demo content 
-addBookToLibrary('Ramble Book', 'Adam Buxton', '363', false);
-addBookToLibrary('1984', 'George Orwell', '280', false);
-addBookToLibrary('Brave New World', 'Aldous Huxley', '248', true);
-addBookToLibrary('My Bookey Wook', 'Russell Brand', '432', false);
-addBookToLibrary('The Watchmaker of Filigree Street', 'Natasha Pulley', '487', true);
+if(library.length===0){
+    addBookToLibrary('Ramble Book', 'Adam Buxton', '363', false);
+    addBookToLibrary('1984', 'George Orwell', '280', false);
+    addBookToLibrary('Brave New World', 'Aldous Huxley', '248', true);
+    addBookToLibrary('My Bookey Wook', 'Russell Brand', '432', false);
+    addBookToLibrary('The Watchmaker of Filigree Street', 'Natasha Pulley', '487', true);
+}
 display();
-
-//Need to fix top nav so that anchor links are offset and collapses for mobiles.
-// let navs = document.querySelectorAll('.nav-link');
-// let body = document.querySelectorAll('.body');
-// navs.forEach(nav => nav.addEventListener('click', function(event){
-//     event.preventDefault()
-//     let targetID = (event.target.href);
-//     console.log(targetID.offsetTop);
-//     // body.animate({
-//     //     scrollTop(targetID.offsetTop -54);
-//     // }, 100);
-// }));
