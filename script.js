@@ -1,6 +1,6 @@
 // setup object to store books and method to add them
 
-let library= JSON.parse(localStorage.getItem('myLibrary')) || [];
+let library= JSON.parse(sessionStorage.getItem('myLibrary')) || [];
 
 function createBook(title, author, pages, read){
     this.title = title;
@@ -66,7 +66,7 @@ function display(){
                 display();
             }
         });
-        localStorage.setItem('myLibrary', JSON.stringify(library));
+        sessionStorage.setItem('myLibrary', JSON.stringify(library));
     }
 }
 
