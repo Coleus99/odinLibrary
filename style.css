@@ -4,7 +4,6 @@
 .readingList, .completedBooks{
     display: flex;
 }
-
 .main h1{
     text-align: right;
     border-bottom: 2px solid black;

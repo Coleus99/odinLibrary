@@ -78,3 +78,13 @@ addBookToLibrary('The Watchmaker of Filigree Street', 'Natasha Pulley', '487', t
 display();
 
 //Need to fix top nav so that anchor links are offset and collapses for mobiles.
+// let navs = document.querySelectorAll('.nav-link');
+// let body = document.querySelectorAll('.body');
+// navs.forEach(nav => nav.addEventListener('click', function(event){
+//     event.preventDefault()
+//     let targetID = (event.target.href);
+//     console.log(targetID.offsetTop);
+//     // body.animate({
+//     //     scrollTop(targetID.offsetTop -54);
+//     // }, 100);
+// }));

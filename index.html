@@ -8,19 +8,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body class="bg-light mt-5">
-    <nav class="navbar navbar-expand fixed-top navbar-light bg-light container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light container">
         <span class="navbar-brand mb-0 h1">My Library</span>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#readingList">Reading List<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#completedBooks">Completed Books</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#addNew">Add New</a>
-            </li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="document.querySelector('#navbarSupportedContent').classList.toggle('show');">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#readingList">Reading List<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#completedBooks">Completed Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#addNew">Add New</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="container">
         <div id="readingList" class="main bg-white p-2">
