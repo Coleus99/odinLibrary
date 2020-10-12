@@ -1,6 +1,5 @@
 .card{
-    width: 250px;
-    margin: 0 5px;
+    margin: 5px;
 }
 .readingList, .completedBooks{
     display: flex;
